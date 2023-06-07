@@ -1,0 +1,15 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<ul>
+  {% for p in ring %}
+	<li>
+		<h2>{{p.titleRing}}</h2>
+		<p>{{p.priceRing}}</p>
+		<hr>
+	</li>
+	<p class="link-read-post"><a href="{{ p.get_absolute_url }}">Купить</a></p>
+	{% endfor %}
+</ul>
+{% endblock %}

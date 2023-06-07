@@ -1,0 +1,35 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<ul>
+        {% for m in medallion %}
+	        <li>
+		        <h2>{{m.titleMedallion}}</h2>
+		        <p>{{m.priceMedallion}}</p>
+		        <hr>
+	        </li>
+	        <p class="link-read-post"><a href="{{ m.get_absolute_url }}">Купить</a></p>
+	{% endfor %}
+</ul>
+<ul>
+    {% for p in ring %}
+	<li>
+		<h2>{{p.titleRing}}</h2>
+		<p>{{p.priceRing}}</p>
+		<hr>
+	</li>
+	<p class="link-read-post"><a href="{{ p.get_absolute_url }}">Купить</a></p>
+	{% endfor %}
+</ul>
+<ul>
+    {% for e in earrings %}
+	<li>
+		<h2>{{e.titleEarrings}}</h2>
+		<p>{{e.priceEarrings}}</p>
+		<hr>
+	</li>
+	<p class="link-read-post"><a href="{{ e.get_absolute_url }}">Купить</a></p>
+	{% endfor %}
+</ul>
+{% endblock %}
